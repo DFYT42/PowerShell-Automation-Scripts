@@ -1,0 +1,12 @@
+#17OCT2018
+#Powershell script to delete c:\windows\temp files
+#Setup a scheduled task on <server> to run a PS script (place the script in <path>) 
+#that will delete these files once a week. 
+###IF PROGRAM IS RUNNING OR FILE IN USE, ACCESS WILL BE DENIED AND TASK WILL NOT COMPLETE FOR THESE FILES--THIS IS OK###
+
+#To test what will happen/be deleted, use the -whatif command. It will print to terminal what will happen when you remove the
+#-whatif command
+#EX: 'Remove-Item –path <path>* -Filter *somefile* -whatif' This will tell you all files with "somefile"
+#in the file name will be deleted, without actually deleting the files.
+
+Remove-Item –path c:\windows\temp\* -recurse
